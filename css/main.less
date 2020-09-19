@@ -1,0 +1,207 @@
+@import "bootstrap3.less";
+@import "font-awesome.less";
+@import "syntax-highlighting.less";
+
+@bright: #111166;
+@dark: #223344;
+
+body {
+	margin: 0px;
+	line-height: 1.5em;
+	padding-top:50px;
+	color:#646464;
+	background-color:#efefef;
+}
+
+pre {
+	border: none;
+}
+
+h1,h2,h3,h4,.highlight,.navbar a,#masthead h4 {
+	font-family:'Oswald',arial narrow,sans-serif;
+	font-display: fallback;
+}
+
+.highlight code {
+	font-family: "Source Code Pro", "Monaco", "Courier New", "monospaced";
+	font-display: swap;
+}
+
+footer {
+	margin-top:40px;
+	padding-top:40px;
+	padding-bottom:40px;
+	background-color:#cecece;
+}
+
+footer a:link, footer a:active, footer a:visited {
+	color: rgb(100, 100, 100);
+}
+
+footer a:hover {
+	text-decoration: none;
+}
+
+#masthead {
+	min-height:199px;
+	background-color:#000044;
+	color:#aaaacc;
+
+	.lead {
+		margin-top: 7px;
+	}
+
+	.byline {
+		font-size: 16px;
+	}
+
+	h1 {
+		font-size: 55px;
+		line-height: 1;
+		color:#fefeff;
+		margin-top:50px;
+	}
+}
+
+.top-spacer {
+	margin-top: 35px;
+	background-color:#ffffff;
+	height:40px;
+}
+
+.spacer {
+	height: 40px;
+	min-height: 40px;
+}
+
+.pagination>li>a, .pagination>li>a:hover, .pagination>li>a:focus,
+a,a:hover {
+	color: @bright;
+}
+
+.pagination>li>span, .pagination>li>span:hover, .pagination>li>span:focus {
+	color: inherit;
+	background-color: inherit;
+}
+
+.pagination>.active>a, .pagination>.active>a:hover, .pagination>.active>a:focus,
+.pagination>.active>span, .pagination>.active>span:hover, .pagination>.active>span:focus 
+{
+	background-color: @bright;
+	border-color: @bright;
+}
+
+h2 a, h2 a:hover {
+	color: @dark;
+	text-decoration: none;
+}
+
+.icon-bar {
+	background-color:#fff;
+}
+
+.navbar-bright {
+	background-color: @bright;
+	color:#fff;
+	margin-bottom: 0;
+	border-width: 0;
+}
+
+.navbar-bright a, .navbar-bright .navbar-brand, #masthead h4 {
+	color:#ccccdd;
+	font-size:14px;
+	text-transform: uppercase;
+	letter-spacing:.08em;
+}
+
+/* first covers the brand icon */
+.navbar-bright a:hover,
+.navbar-bright li > a:hover {
+	background-color:#000044;
+}
+
+.navbar-toggle {
+	border-width: 0;
+}
+
+.navbar-toggle:hover {
+	background-color:#fff;
+}
+
+.navbar-toggle:hover .icon-bar {
+	background-color: @bright;
+}
+
+.panel {
+	border-color:transparent;
+	border-radius:0;
+}
+
+hr {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+/* centers an image and gives it some spacing above and below it */
+img.post-img {
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto; 
+	margin-top: 25px; 
+	margin-bottom: 25px;
+	height: auto; 
+	max-width: 75%;
+}
+
+#nav {
+	background-color: @bright;
+}
+
+@media screen and (min-width: 768px) {
+
+	#nav {
+		max-height: 1000px;
+		overflow: visible;
+	}
+
+	.post-date {
+		text-align: right;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	#nav {
+		margin-left: -15px;
+		margin-right: -15px;
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 100%;
+		position: absolute;
+		border-top: .5px #666 solid;
+	}
+
+	#nav {
+		-moz-transition: -moz-transform .5s;
+		-o-transition: -o-transform .5s;
+		-webkit-transition: -webkit-transform .5s;
+		-moz-transform-origin: top;
+		-ms-transform-origin: top;
+		-o-transform-origin: top;
+		-webkit-transform-origin: top;
+		transform-origin: top;
+		transition: transform .4s;
+	}
+	
+	.updown {
+		-moz-transform: scaleY(0);
+		-ms-transform: scaleY(0);
+		-o-transform: scaleY(0);
+		-webkit-transform: scaleY(0);
+		transform: scaleY(0);
+	}
+
+	#masthead h1 {
+		font-size: 80px;
+	}
+}

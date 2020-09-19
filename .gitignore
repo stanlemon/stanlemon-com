@@ -1,0 +1,8 @@
+## Dependencies
+node_modules/
+
+## Generated Site Data
+_site
+
+## Generated CSS Asset
+css/main.css
