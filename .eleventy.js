@@ -1,6 +1,5 @@
 module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy("assets");
-    eleventyConfig.addPassthroughCopy("css");
 
     eleventyConfig.addCollection('posts', collection => {
         return collection.getFilteredByGlob('_posts/*.md');

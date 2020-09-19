@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: '12'
       - run: npm install
+      - run: npm run less
       - run: npm run build
 
       - name: Deploy 🚀

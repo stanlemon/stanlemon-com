@@ -13,7 +13,8 @@
   "scripts": {
     "serve": "eleventy --serve",
     "build": "eleventy",
-    "less": "lessc ./css/main.less ./css/main.css"
+    "less": "lessc ./css/main.less ./_site/css/main.css",
+    "clean": "rm -rf ./_site/**"
   },
   "author": "Stan Lemon",
   "license": "MIT"
