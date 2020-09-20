@@ -1,6 +1,7 @@
 @import "bootstrap3.less";
 @import "font-awesome.less";
-@import "syntax-highlighting.less";
+// Import this as less so that it's included in the resulting CSS file
+@import (less) "../node_modules/prismjs/themes/prism-tomorrow.css";
 
 @bright: #111166;
 @dark: #223344;
