@@ -16,6 +16,12 @@
     <article class="post-content">
       <hr>
       {{ content }}
+      {% if keepReading %}
+        <div class="spacer-sm"></div>
+        <div class="keep-reading">
+          <em><a href="{{url}}">Keep Reading</a></em>
+        </div>
+      {% endif %}
       <hr>
     </article>
   </div>

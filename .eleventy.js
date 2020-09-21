@@ -9,6 +9,11 @@ module.exports = (eleventyConfig) => {
         return collection.getFilteredByGlob('_posts/*.md');
     });
 
+    eleventyConfig.setFrontMatterParsingOptions({
+        excerpt: true,
+        excerpt_separator: "<!-- excerpt -->"
+    });
+
     return {
         dir: {
             input: "./",      // Equivalent to Jekyll's source property

@@ -21,8 +21,14 @@ permalink: "/{% if pagination.pageNumber>0 %}page/{{ pagination.pageNumber | plu
   </div>
 </div>
 
-{% for page in pagination.items %}
-  {% include article with url: page.url, title: page.data.title, date: page.data.date, content: page.templateContent %}
+{%- for page in pagination.items -%}
+  {%- if page.data.page.excerpt -%}
+    {%- assign pageContent = page.data.page.excerpt -%}
+  {%- else -%}
+    {%- assign pageContent = page.templateContent -%}
+  {%- endif -%}
+
+  {% include article with url: page.url, title: page.data.title, date: page.data.date, content: pageContent, keepReading: page.data.page.excerpt %}
   <div class="spacer"></div>
 {% endfor %}
 
