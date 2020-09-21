@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8">
+  <title>lemonbytes by Stan Lemon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://stanlemon.com/page/5/">
+  <link rel="alternate" type="application/rss+xml" title="lemonbytes by Stan Lemon" href="https://stanlemon.com/feed.xml" />
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">  
+
+  <link href="//fonts.googleapis.com/css?family=Oswald|Source+Code+Pro" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <div id="nav" class="updown" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://twistoflemonpod.com/" target="_window">Podcast</a></li>
+        <li><a href="https://eepurl.com/gvEkEL" target="_window">Subscribe</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          lemonbytes<span class="byline"> by Stan Lemon</span>
+          <p class="lead">husband, dad, steelers fan and software engineer</p>
+        </h1>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="panel">
+        <div class="panel-body">
+          
+<div class="row">
+  <div class="col-md-offset-1 col-md-10">
+    <div><strong>If you don't read anything else, check out:</strong></div>
+    <ul>
+      <li><a href="/2019/08/08/how-we-paid-off-our-mortgage/">How We Paid Off Our Mortgage</a> <em>(for the finance nerd)</em></li>
+      <li><a href="/2019/07/26/life-with-a-twist-of-lemon-the-first-year/">Life with a Twist of Lemon - The First Year</a> <em>(for the person with nothing to do)</em></li>
+      <li><a href="/2019/02/28/react-pouchdb-components/">React PouchDB Components</a> <em>(for the programmer)</em></li>
+      <li><a href="/2019/07/06/my-favorite-marvel-movies/">My Favorite Marvel Movies</a> <em>(for the pop culture nerd)</em></li>
+    </ul>
+
+    <hr>
+  </div>
+</div>
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="/2014/10/07/demoing-lemonrestbundle-with-ng-admin/">Demoing LemonRestBundle with ng-admin</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Oct 08, 2014</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>tl;dr <a href="http://restdemo-stanlemon.rhcloud.com/#">You can try out LemonRestBundle with ng-admin here.</a></p>
+<p>Last week I shared that I was working on a <a href="github.com/stanlemon/rest-bundle">Symfony 2 bundle that would create REST end points from Doctrine entities</a>. I've been continuing to work on that bundle, adding features and flexibility and I decided to re-evaluate the way I was demoing it. The truth is that I didn't want to sink a lot of time into writing a demo, but I also want to do a show more functionality than just pulling down some objects from and dumping them to a page. What I want is to show the full REST life cycle, getting, searching and saving objects to an api. Fortunately there's a really great tool out there that plugs into a REST api and does just that! It’s called <a href="https://github.com/marmelab/ng-admin">ng-admin</a> and it’s from the folks over at <a href="http://marmelab.com/">Marmelab</a>.</p>
+<p>For those that aren't familiar with <a href="https://github.com/marmelab/ng-admin">ng-admin</a>, it's a tool written using <a href="https://angularjs.org/">Angular</a> and it allows you to easily wire up a &quot;stock&quot; UI for a REST API. Like my own project, it's opinionated and convention oriented. Quite honestly it's a pretty cool tool. So I’ve hooked it up to a symfony standard application with the <a href="github.com/stanlemon/rest-bundle">LemonRestBundle</a> and configured some entities to match <a href="ng-admin.marmelab.com">Marmelab’s own demo</a>. I also pulled the sample data down that Marmelab was using and stuck it in a sqlite database. The database resets every minute, but it’s enough time to create a post and edit some comments and see <a href="https://github.com/stanlemon/rest-bundle">LemonRestBundle</a> in action. The really cool part is when you take a look at the demo app’s GitHub repository and realize <a href="https://github.com/stanlemon/rest-demo-app/tree/master/src/Lemon/RestDemoBundle/Entity">it took three Entity classes to make the whole thing happen</a>.</p>
+<p><a href="http://restdemo-stanlemon.rhcloud.com/#/list/post">I’ve deployed the demo over at OpenShift so you can take a look and try it out for yourself.</a> You can also clone the <a href="https://github.com/stanlemon/rest-demo-app">demo app from GitHub</a>, run composer.phar install and try it yourself!</p>
+<p><strong>Links to check out:</strong></p>
+<ul>
+<li><a href="http://github.com/stanlemon/rest-bundle">LemonRestBundle for Symfony</a></li>
+<li><a href="http://github.com/stanlemon/rest-demo-app">Demo app repository for LemonRestBundle</a></li>
+<li><a href="http://restdemo-stanlemon.rhcloud.com">Live demo of LemonRestBundle on OpenShift</a></li>
+<li><a href="https://github.com/marmelab/ng-admin">ng-admin by Marmelab</a></li>
+</ul>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="/2014/10/02/lemonrestbundle-for-symfony/">LemonRestBundle for Symfony</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Oct 02, 2014</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>For a little while now I’ve been working on a bundle for Symfony to easily create REST apis for <a href="http://www.doctrine-project.org/projects/orm.html">Doctrine</a> entities. My goal was to be able to create a REST api with nothing more than a Doctrine entity and it’s metadata, including custom metadata from bundles like <a href="http://jmsyst.com/libs/serializer">JMS Serializer</a>. I wanted to invest very little time in the actual api part, and get to writing applications that used it. I’ve hit this wall before, and inevitably what happens is I make a valiant effort at rolling a REST api and then get distracted or bored and walk away leaving the project to rot.</p>
+<p>Recently I was resurrecting an older project and wanting to do right by it and decided I could mask a lot of my database worts by leveraging some of Doctrine’s more advanced features. Specifically I added <a href="http://doctrine-orm.readthedocs.org/en/latest/cookbook/custom-mapping-types.html">custom types</a> to ensure I had good data structures, leveraged some <a href="http://doctrine-orm.readthedocs.org/en/latest/reference/events.html">lifecycle events</a> and implemented <a href="http://doctrine-orm.readthedocs.org/en/latest/tutorials/embeddables.html">Doctrine 2.5’s recent addition of Embeddables</a>. I had also added a bunch of validation to my entities using <a href="http://symfony.com/doc/current/book/validation.html">Symfony’s Validation component</a>, so they were well defined and could be validated easily with meaningful responses when things weren't right. I wound up with a clean set of objects that did what I wanted well, but there was one problem, I needed an api! Having been down this road before I wanted to solve my problem for the last time, or at the very least make the problem more interesting to solve.</p>
+<p>Recently I have been playing with <a href="https://github.com/KnpLabs/KnpJsonSchemaBundle">Knp’s JSON Schema bundle</a> and this was in part my inspiration to make something that was <em>magical</em>. I don’t mean magical in the buzz word sense (okay, maybe I do). I mean magical in the highly <em>opinionated</em>, <em>convention driven</em> sort of way. My solution needed to <em>just work</em>(tm). The pieces were all there, and as I mentioned earlier the bulk of the tooling already existed, specifically great serialization, easy validation, reliable content negotiation and of course the graph traversal of Doctrine itself.  I just needed to get it all hooked into the request/response process of an api. Thus begot my very own REST bundle for Symfony 2.</p>
+<p>Now hold up, I know what you’re thinking... Symfony already has <a href="https://github.com/FriendsOfSymfony/FOSRestBundle">a REALLY good REST bundle from Friends of Symfony</a>, doesn’t it? This is very true! That is an excellent bundle, it’s high powered and very flexible. <strong>Mine is not</strong>. In fact it’s not even intended to be. If you want <a href="https://github.com/willdurand/Hateoas">HATEOAS</a> for example, FOSRestBundle is the right option for you. If you need to customize the POST/PUT processes or alter extensively the behavior of your GET actions, then FOSRestBundle is going to be a far better option for you. If you want to use <a href="http://propelorm.org">Propel</a> or <a href="http://doctrine-mongodb-odm.readthedocs.org/en/latest/">Mongo</a> (though that may come in the future for mine) or any other data source besides Doctrine ORM than FOSRestBundle is the better option for you. If you are using Doctrine ORM and want to write as little code as possible while getting some REST endpoints, than my bundle might be the better option for you.</p>
+<p>Enough chatter, <a href="https://github.com/stanlemon/rest-bundle/blob/master/Tests/Fixtures/Person.php">take a look at the fixtures included in my bundle</a> and you’ll see some very simple examples of what sort of metadata driven modeling I had in mind for this project. <a href="https://github.com/stanlemon/rest-bundle/blob/master/Tests/Controller/RestControllerTest.php">I have a pretty extensive functional test that shows how the bundle works.</a> I’ve also built a simple example application using this bundle that you can take a look at and see the bundle working. Well without further delay, I'm really happy to share with you <a href="https://github.com/stanlemon/rest-bundle">LemonRestBundle</a>, <a href="https://github.com/stanlemon/rest-bundle/blob/master/Resources/doc/index.md">documentation included</a>! Feedback is very welcome, feel free to drop me an email or <a href="http://twitter.com/stanlemon">shoot me a message on twitter</a>.</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="/2014/06/16/why-symfony-2-5-is-important/">Why Symfony 2.5 is important</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Jun 16, 2014</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p><a href="http://symfony.com/blog/symfony-2-5-0-released">Symfony 2.5 was released on June 1</a>. I've been following blogs and listening to podcasts about the release and there are a lot of really awesome additions in this release. But there is one feature in particular that I don't believe is getting enough attention and deserves some.</p>
+<p>Back in April I wrote about my frustration with <a href="/2014/04/13/symfony-and-absolute-paths/">Symfony &amp; Absolute Paths</a>. I was excited to see in May that this concern found <a href="https://github.com/symfony/symfony/pull/10894">itself into an official GitHub issue and PR</a> and that it might get resolved in a future release of Symfony.  Well it has, and burried under the notes for 2.5 RC1 is this, &quot;bug #10894 [HttpKernel] removed absolute paths from the generated container (fabpot)&quot;.</p>
+<p>Quite frankly, this is <strong>huge</strong>!  After my post in April I hacked together what I was calling a <em>PathlessKernel</em> to work around this issue.  I basically regex'ed out the application root from the container. In my opinion this was an inelegant solution and thus I chose not to share it. The fix in #10894 is far superior and allows for the regenerating of cache in a CI environment before deployment without all of the path chaos previously created when dumping the container.</p>
+<p>This is a big win for Symfony as it makes an application build artifact truly portable!</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="/2014/06/12/review-extending-symnfony/">Review: Extending Symnfony</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Jun 12, 2014</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p><a href="http://www.packtpub.com/extending-symfony-2-web-application-framework/book">Extending Symnfony</a> by Sébastien Armand is a tutorial-style introduction to a variety of the ways that you can extend a Symfony 2 full stack installation. I’m a big fan of Symfony 2 and I’ve done a fair amount of app building with it, so I was interested in Armand’s book and seeing what new things I could discover about hooking into sf2.</p>
+<p>The book is filled with code samples, far more than you’ll find in most other technical books. Most of these code samples are also complete, which anyone who has traversed the official Symfony 2 cookbooks will greatly appreciate. Unfortunately, these code samples sometimes cross pages in inconvenient ways, and none of them include syntax highlighting which can make it hard to read at times.</p>
+<p>Armand tackles six (sort of eight) areas of Symfony 2 development where developers can tap in and extend existing functionality of Symfony 2. First and foremost he kicks off his tutorials with covering service definitions and listeners. These topics seem like they could have been separate chapters to me, but nonetheless he does a good job of giving real world examples of how to tie these things in. He especially does well with event listeners - the secret weapon of the Symfony 2 stack (in my opinion anyhow).</p>
+<p>Armand’s approach to extending symfony is project-based, meaning that through the book you’re working on building an app that handles some details for meet ups between users. You can think of it like the old Symfony 1 Askeet tutorial. This is a huge advantage of Armand’s book over other Symfony 2 texts you’ll find in the wild. Actual applications create context and drive home the concepts. As an added bonus, in this book you are NOT building yet another task manager!</p>
+<p>The Security chapter covers some of the more difficult areas of Symfony 2. Anyone who has dealt with Security in sf2 knows that, while extremely powerful, it can also be extremely challenging. Armand’s examples are helpful, especially as he tackles an OAuth implementation. Armand uses the Friends of Symfony UserBundle to get going, but unfortunately didn’t cover with too much depth getting started with this super handy bundle. The examples in the book are priceless, but I look forward to future revisions that cover the new SimpleAuth implementation in Symfony 2. The only other thing I wished Armand would have covered was securing an api with tokens and a custom user provider for doing this. He shows how a cookie can be used with an event listener, but truthfully there are better ways of tackling this problem in Symfony 2 that are more consistent with its security model.</p>
+<p>One of the most valuable chapters in this book is the Doctrine chapter. Doctrine 2’s official documentation lacks a lot of context. By being a project-based tutorial, Armand actually shows you how to write a custom data type, custom DQL function, and a custom filter, rather than stumble through the Doctrine 2 docs and hope you got close. This chapter in and of itself is a valuable resource for those times when you need to do these things.</p>
+<p>The final chapter discusses bundles briefly. This is one area of the book I felt could have been fleshed out a bit more. Armand covers the basics, but part of me felt like this chapter almost belonged at the beginning of the book instead of the tail end. The other thing that was missing from this chapter was bundle inheritance which, while a tricky subject, is a huge part of extending a Symfony 2 application.</p>
+<p>All in all I think this is a solid book on tapping into some of the more powerful features of Symfony 2 and it’s counterpart Doctrine 2. The book is at times a little oddly organized, but the code samples and tip are worthy any web developers time. If you’re looking to dive into some of the things in the book’s table of contents get yourself a copy and profit from Armand’s tutorials and extensive code samples.</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="/2014/05/22/a-review-of-pley-renting-legos/">A Review of Pley & Renting Legos</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>May 23, 2014</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>I recently decided to signup for <a href="http://pley.com">Pley</a>, a service that supplies lego sets by mail for a monthly membership price.  They advertise that you're safe to lose a piece or two and that the kits are always sanitary using their special <em>FDA grade</em> process.  Unfortunately I found both of these claims to be <strong>false</strong>.</p>
+<p>First off let's set the record straight, I'm an adult Lego geek. That's a technical term, you can check me on it. As a kid I had a vast array of sets and spent countless hours constructing my dreams. Then I went to High School, College and got married and had mostly forgotten about Legos.  Until I took a job where I was working on the hosting infrastructure used by the Official Lego Podcasts, like <a href="https://itunes.apple.com/us/podcast/lego-hero-factory-channel/id372652372?mt=2">this one</a>.  Suddenly I had an excuse to play with Legos again, it was work related after all...</p>
+<p>I've collected a few sets as an adult, and I fully admit to playing with them from time to time.  <em>I'm not ashamed.</em> When I saw Pley I thought it could be the perfect <em>life-as-a-service</em> for my late night hobby.</p>
+<p>I went through the trial and the first set I got was a total bust. The <a href="http://shop.lego.com/en-US/Desert-Skiff-9496">Desert Skiff</a> came in the mail and I started piecing it together.  Normally I try to avoid the directions as much as possible, as that adds to the general fun of the puzzle.  But on this one though I had to pull out the book. This probably sounds a little crazy since it's only a 213 piece set, but hear me out. As it turns out the set was missing pieces, to the tune of at least 10! I finally couldn't finish the set because there were so many missing. I logged online an reported the missing pieces and sent the set back in.  I admit that out of frustration I didn't pull everything apart. I hadn't heard back from Pley until this week when they sent this email to me.</p>
+<blockquote>
+<p>Hi Stan,</p>
+<p>We hope you are enjoying Pley. We have received your set today. Thank you!</p>
+<p>To keep kids happy, we ask all users to disassemble the sets to individual pieces so that each child has the same building experience with no sets arriving partially built.</p>
+<p>Here is a note we received from on of our Pleyers:</p>
+<p><img src="https://stanlemon.com/assets/talsletter.png" alt="Tal's letter:can you separate piece"></p>
+<p>We appreciate you taking a few extra minutes to separate each piece so that other children can enjoy the set equally.</p>
+<p>Thanks for Pleying!</p>
+<p>The Pley Team</p>
+</blockquote>
+<p>I'm a little more than flabbergasted. I didn't get any replies when I filed a missing-part list! On their website they say, <em>&quot;Lost a piece? No worries. We won't charge.&quot;</em> What they don't say is, &quot;The next guy might be out of luck though!&quot; Furthermore, if their process is so clean how did this kid <em>Tal</em> get the set still stuck together? How do they know I didn't stick a booger between those blocks?  And really what are they doing sending this kid's letter to me? Surely this is some kind of privacy violation!</p>
+<p>The thing I really miscalculated though was thinking that renting one set at a time would somehow pacify my burning desire as a Lego-master to mix and match multiple sets. There simply is nothing better than owning your sets, period.</p>
+<p>Unfortunately I just can't recommend this service.  Yeah, it's partially out of bitterness, but I also feel like I've been lied to. So keep buying on Amazon, or Target or wherever it is you get your Lego-fix and steer clear of Pley!</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+
+<nav class="text-center">
+  <ul class="pagination">
+    
+      <li>
+        <a href="/page/4/">&laquo; Prev</a>
+      </li>
+    
+
+    
+      
+        <li><a href="/">1</a></li>
+      
+    
+      
+        <li><a href="/page/2/">2</a></li>
+      
+    
+      
+        <li><a href="/page/3/">3</a></li>
+      
+    
+      
+        <li><a href="/page/4/">4</a></li>
+      
+    
+      
+        <li class="active"><a>5</a></li>
+      
+    
+      
+        <li><a href="/page/6/">6</a></li>
+      
+    
+      
+        <li><a href="/page/7/">7</a></li>
+      
+    
+      
+        <li><a href="/page/8/">8</a></li>
+      
+    
+      
+        <li><a href="/page/9/">9</a></li>
+      
+    
+      
+        <li><a href="/page/10/">10</a></li>
+      
+    
+      
+        <li><a href="/page/11/">11</a></li>
+      
+    
+      
+        <li><a href="/page/12/">12</a></li>
+      
+    
+      
+        <li><a href="/page/13/">13</a></li>
+      
+    
+      
+        <li><a href="/page/14/">14</a></li>
+      
+    
+
+    
+      <li>
+        <a href="">Next &raquo;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+        </div>
+      </div>
+   	</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li>
+            <a href="http://twitter.com/stanlemon">
+              <i class="icon-twitter icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://linkedin.com/in/stanlemon">
+              <i class="icon-linkedin icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/stanlemon">
+              <i class="icon-github icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="undefined/feed.xml">
+              <i class="icon-rss icon-2x"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">
+            &copy;  Stan Lemon
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  const nav = document.querySelector('#nav');
+  document.querySelector('.navbar-toggle').addEventListener("click", function() {
+    nav.classList.toggle('updown');
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33072694-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

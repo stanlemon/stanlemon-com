@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8">
+  <title>lemonbytes by Stan Lemon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://stanlemon.com/2019/01/23/react-relay-and-mutations/">
+  <link rel="alternate" type="application/rss+xml" title="lemonbytes by Stan Lemon" href="https://stanlemon.com/feed.xml" />
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">  
+
+  <link href="//fonts.googleapis.com/css?family=Oswald|Source+Code+Pro" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <div id="nav" class="updown" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://twistoflemonpod.com/" target="_window">Podcast</a></li>
+        <li><a href="https://eepurl.com/gvEkEL" target="_window">Subscribe</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          lemonbytes<span class="byline"> by Stan Lemon</span>
+          <p class="lead">husband, dad, steelers fan and software engineer</p>
+        </h1>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="panel">
+        <div class="panel-body">
+          
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="">React, Relay & Mutations</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Jan 23, 2019</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>A working example of what I'm going to describe here can be found at https://github.com/stanlemon/example-relay-app.</p>
+<hr>
+<p>For awhile <a href="https://graphql.org">GraphQL</a> has looked interesting to me, like something I wanted to learn. I love the concept of strongly typing expressive queries that can be batched into a single request. That's GraphQL, a technology that really seems to shine in UI work for single page apps (SPAs).</p>
+<p><a href="https://facebook.github.io/relay/">Relay</a> is Facebook's GraphQL framework for <a href="https://reactjs.org">React</a>, it's really where GraphQL got its traction from. I love React and spend a good portion of my <em>hobby time</em> building stuff with it, so GraphQL was a natural progression for me.  The problem is that documentation and examples on how to use Relay are all over the place and it's even harder to get into if don't already have a working GraphQL server. <em>Some might point out that <a href="https://www.apollographql.com/">Apollo</a> is a much easier place to start with React &amp; GraphQL and that definitely seems true, but I specifically wanted to familiarize myself with Relay.</em></p>
+<p>My first challenge was a working GraphQL server that I could issue queries against. Fortunately <a href="https://www.graphile.org/postgraphile/">PostGraphile</a>] makes this super easy. You need a <a href="http://postgresql.org">Postgres</a> instance to get going, but after that you have a working GraphQL server over top of a Postgres database. I won't go into how to setup PostGraphile, it's documentation is actually rather than good and there are some additional environment notes in the repository with my example code.</p>
+<p>Querying from within Relay is pretty easy and straightforward and the documentation that Facebook offers is adequate. <a href="https://www.graphqlbin.com/v2/KZ4Efq">If you want to play around with querying check out this GraphQL playground with Star Wars data, it's pretty fantastic!</a> GraphQL is not just for fetching data though, it also allows you to create, update and delete it. Those operations are called mutations and their documentation is a lot less clear.</p>
+<p>A mutation in and of itself is not complicated, there are really two parts to it: (1) the mutation definition and then (2) committing the mutation to the GraphQL server.  That looks like this:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> graphql<span class="token punctuation">,</span> commitMutation <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-relay'</span><br><br><span class="token keyword">const</span> mutation <span class="token operator">=</span> graphql<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>  mutation AppCreatePersonMutation($input: CreatePersonInput!) {<br>    createPerson(input: $input) {<br>      person {<br>        id<br>        firstName<br>        lastName<br>      }<br>    }<br>  }<br></span><span class="token template-punctuation string">`</span></span><br><br><span class="token function">commitMutation</span><span class="token punctuation">(</span>environment<span class="token punctuation">,</span> <span class="token punctuation">{</span><br>  mutation<span class="token punctuation">,</span><br>  variables<span class="token operator">:</span> <span class="token punctuation">{</span><br>    input<span class="token operator">:</span> <span class="token punctuation">{</span><br>      person<span class="token operator">:</span> <span class="token punctuation">{</span><br>        firstName<span class="token operator">:</span> <span class="token string">"Stan"</span><span class="token punctuation">,</span><br>        lastName<span class="token operator">:</span> <span class="token string">"Lemon"</span><br>      <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>In the app I built I had already loaded all of the person records from my database using a query like this:</p>
+<pre class="language-javascript"><code class="language-javascript">query AppQuery <span class="token punctuation">{</span><br>  allPeople <span class="token punctuation">{</span><br>    nodes <span class="token punctuation">{</span><br>      id<br>      firstName<br>      lastName<br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>When I first got this working I naively expected the properties in the react component that came from this query to update, such that my new person would appear in my list.  But alas it did not! Updating the state store for relay is not straight forward. The <a href="https://facebook.github.io/relay/docs/en/mutations.html">mutation documentation on relay's site</a> has some clues, but I ended up struggling to implement what I thought was a pretty straight forward user case: <em>updating the list of nodes from my initial query with a new record</em>.</p>
+<p>Make sure your <code>createPerson()</code> mutation is returning the same fields as your <code>allPeople</code> query, and also make sure that <code>allPeople</code> is returning <code>id</code>. Matching fields in the response is important for new records. If you're only doing updates you can get away with returning just the fields you've changed, but the example below does not cover partial updates.  The <code>id</code> field is not actually required for create mutations like this, but as soon as you start working with updates you'll thank me as the the global graphql id is the easiest way to yank an existing record out of the store.</p>
+<p>What we need to do now is define an <code>updater</code> function on that the second parameter to <code>commitMutation()</code>.  This updater receives a single parameter, the <code>store</code> and this is where we will do our handy work.</p>
+<p>Inside the updater function the first thing we want to do is get the portion of the store where <code>allPeople</code> is at, because this is what we need to modify.  We need to put our new person into the list of person records in that part of the store, which will in turn trigger the update to our UI. This is actually pretty easy to do as long as you know the key to pass the <code>get()</code> method. I found this out using the <code>replay-devtools</code>, which I highly recommend installing.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> allPeople <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'client:root'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Now we have the container of the query. Because we're using PostGraphile everything is nested under <code>nodes</code> so we actually need to yank that out from under our <code>allPeople</code> variable. That looks like this:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> nodes <span class="token operator">=</span> allPeople<span class="token punctuation">.</span><span class="token function">getLinkedRecord</span><span class="token punctuation">(</span><span class="token string">'allPeople'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getLinkedRecords</span><span class="token punctuation">(</span><span class="token string">'nodes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>We also need to get the person record that our GraphQL server returned to us and then yank the payload from it.  The payload in this case is that new person we created.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> payload <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">getRootField</span><span class="token punctuation">(</span><span class="token string">'createPerson'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> newPerson <span class="token operator">=</span> payload<span class="token punctuation">.</span><span class="token function">getLinkedRecord</span><span class="token punctuation">(</span><span class="token string">'person'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>We have the original list of persons and the new person we added, now we need to combine them, this is really easy using the spread operation:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> newNodes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>nodes<span class="token punctuation">,</span> newPerson<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+<p>Now we have the full list of person objects as they exist in our database. Keep in mind if you were sorting these somehow with graphql you will need to insert the newPerson into the proper place, not just blindly at the end like we are doing.   Lastly we take that new nodes list and replace it in our <code>allPeople</code> portion of the store like so:</p>
+<pre class="language-javascript"><code class="language-javascript">allPeople<span class="token punctuation">.</span><span class="token function">getLinkedRecord</span><span class="token punctuation">(</span><span class="token string">'allPeople'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setLinkedRecords</span><span class="token punctuation">(</span>newNodes<span class="token punctuation">,</span> <span class="token string">'nodes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Once this is done the local store in your react component will re-render with the new data.</p>
+<p>Keep in mind, this is a root level scenario for the component in question.  It seems pretty simple, but good luck finding an example that works like this one. If you're using data nested under another object (like comments on a post) than there are plenty of examples on the web more suited to that scenario, examples that involve things like the <code>ConnectionHandler</code>.</p>
+<p>You can find all the code for my working example over at https://github.com/stanlemon/example-relay-app</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+        </div>
+      </div>
+   	</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li>
+            <a href="http://twitter.com/stanlemon">
+              <i class="icon-twitter icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://linkedin.com/in/stanlemon">
+              <i class="icon-linkedin icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/stanlemon">
+              <i class="icon-github icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="undefined/feed.xml">
+              <i class="icon-rss icon-2x"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">
+            &copy;  Stan Lemon
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  const nav = document.querySelector('#nav');
+  document.querySelector('.navbar-toggle').addEventListener("click", function() {
+    nav.classList.toggle('updown');
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33072694-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8">
+  <title>lemonbytes by Stan Lemon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://stanlemon.com/page/8/">
+  <link rel="alternate" type="application/rss+xml" title="lemonbytes by Stan Lemon" href="https://stanlemon.com/feed.xml" />
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">  
+
+  <link href="//fonts.googleapis.com/css?family=Oswald|Source+Code+Pro" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <div id="nav" class="updown" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://twistoflemonpod.com/" target="_window">Podcast</a></li>
+        <li><a href="https://eepurl.com/gvEkEL" target="_window">Subscribe</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          lemonbytes<span class="byline"> by Stan Lemon</span>
+          <p class="lead">husband, dad, steelers fan and software engineer</p>
+        </h1>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="panel">
+        <div class="panel-body">
+          
+<div class="row">
+  <div class="col-md-offset-1 col-md-10">
+    <div><strong>If you don't read anything else, check out:</strong></div>
+    <ul>
+      <li><a href="/2019/08/08/how-we-paid-off-our-mortgage/">How We Paid Off Our Mortgage</a> <em>(for the finance nerd)</em></li>
+      <li><a href="/2019/07/26/life-with-a-twist-of-lemon-the-first-year/">Life with a Twist of Lemon - The First Year</a> <em>(for the person with nothing to do)</em></li>
+      <li><a href="/2019/02/28/react-pouchdb-components/">React PouchDB Components</a> <em>(for the programmer)</em></li>
+      <li><a href="/2019/07/06/my-favorite-marvel-movies/">My Favorite Marvel Movies</a> <em>(for the pop culture nerd)</em></li>
+    </ul>
+
+    <hr>
+  </div>
+</div>
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="/2013/12/09/2-factor-this/">2-Factor This!</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Dec 10, 2013</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>A lot of services across the web are amping up security in lieu of <a href="http://abcnews.go.com/Technology/hacker-group-stole-million-stolen-facebook-google-passwords/story?id=21109910">recent breaches</a>. One technique to do this is called <a href="https://help.github.com/articles/about-two-factor-authentication">two factor authentication</a>. It’s a name that perfectly describes the technique, but explains absolutely nothing.</p>
+<p>So what is two factor auth and why do you care? Simply, two factor auth is your password plus something else. In most cases that “something else” is going to be a text message, an email or a secure token system like <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605">Google Authenticator</a> or <a href="https://www.authy.com">Authy</a>. Some banking websites have been doing this forever via email but the growing trend is to use text messages as they can be a considerably safer approach to this sort of authentication.</p>
+<p>Here’s the thing to keep in mind… You are most likely already doing two factor auth in your life - you just don’t think of it like that. If you have a safety deposit box for example, it takes two keys to unlock it. Without both sets your birth certificate isn’t going to see the light of day. If you’ve bought a car recently you’re also using two factor auth as <a href="http://en.wikipedia.org/wiki/Transponder_car_key">every car key these days comes with a microchip implemented in it</a>. You can’t start your car with a copy of your key, you need to use the key plus the microchip if you want to drive anywhere. And if you don’t have that microchip your car not only won’t run, it very well may lock up on you too! These are two factor strategies, where they prevent criminal-like-folk from copying your keys and running away with your identity and precious automobile. <em>Why not use that same strategy with your personal information stored securely on the world wide web?</em></p>
+<p>How does two factor work with your favorite web service? There are two typical routes, the most common of which involves your cell phone and a text messaging plan. If you don’t have unlimited text messaging either pony up or take a trip to the Verizon store for an upgrade. When you login, normally for the first time, you’ll get a text message from the service in question. Websites like Facebook will ask you to punch in a unique code on this text message after you enter your password, but before you actually get to login to the service. The idea is that your cell phone is most likely on you and there’s a uniqueness to the device in your pocket that a hacker cannot replicate. Stealing your password then is not enough, you need to steal a person’s cell phone too - thus making it infinitely more difficult for a hacker to access your information.</p>
+<p>Not every service has two factor authentication, but a lot do. You should evaluate the services you use every day and consider enabling two factor authentication where it’s available. I’m a big proponent of enabling two factor auth for your <a href="http://www.google.com/landing/2step/">Google</a>, <a href="https://www.dropbox.com/help/363/en">Dropbox</a>, <a href="http://blog.evernote.com/blog/2013/10/04/two-step-verification-available-to-all-users/">Evernote</a> and <a href="https://www.facebook.com/note.php?note_id=10150172618258920">Facebook</a> accounts. As these items likely contain more personal data about you and your friends than anything else you’re using it’s important to harden your security around them.</p>
+<p>Don’t get me wrong… Two factor auth doesn’t just slow down the losers trying to compromise your data, it slows you down too. Principally though this should only happen when you setup Facebook on your phone, or configure your email client to pull down your Gmail. Your setup is slower, but your data is safer. In my opinion this is a fair trade considering what is at stake. One other thing to keep in mind… <strong>These services don’t do two factor auth for their sake.</strong> It actually costs them money to run, with almost no return on the investment! Two factor auth is a service for you, to protect your data and keep you, your family and friends safe.</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="/2013/12/07/you-dont-give-a-crap-but-your-mom-does/">You don't give a crap, but your mom does!</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Dec 07, 2013</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p><em>So you don’t give a crap that your data gets exposed or hacked?</em> You don’t have anything to hide, so the potential leak isn’t worth the added effort of complex passwords and password management systems.  You want a simple, easy to remember password.  Fair enough.  I get it.  You don’t give a crap, but here’s the thing… <strong>Your mom might.</strong> Or your dad, or your sister or your great Aunt Bertha or your Cousin’s best friend that you just recently added on Facebook.  <em>And that’s the point</em>!</p>
+<p>Let’s say you’re one of the few who don’t give a rip because you have nothing to hide. Stop being selfish!  Most of this password protection junk has nothing to do with you.  It has to do with the information you have access to, like my email address, my phone number, the names of my kids and that picture I shared with you from my best friends bachelor party!</p>
+<p>You are most likely passively collecting information in the services you use every day.  It might just be people's names, but it also could be more serious information like their addresses and phone numbers.  A data leak because you used a stupid password exposes all kinds of things that your friends and family don’t want everyone under the sun to know. And not just because it’s private information, but because it effects their safety!</p>
+<p>It can get worse then just the revealing of address and phone numbers though.  How you say?  Consider the fact that that Facebook app on your phone posts where you go.  Maybe it’s a restaurant, church or even the grocery store.  You’re a hip social media rock star and you’ve been capturing your geo-coordinates and checking in wherever you go.  So have I, your mutual friend on Facebook,  as well as your neighbor’s 16 year old daughter.  Now ALL of that information about where you’ve been and the trends of your daily activity is accessible to some low life hacker that cracked your stupid-simple password.  Is this sounding scary yet?  Let’s keep going…  That hacker might decide to pay one of us (you, me or or your neighbor’s teenage daughter) a visit.  Or maybe the hacker sells that valuable data information to a petty thief or a pedophile. Now is it scary? <em>It ought to be</em>.  <strong>This is what happens when the flood gate known as your weakly protected account is opened.</strong></p>
+<p>You are just a gateway drug for a hacker. Your credit card, social security number are low hanging fruit compared to the peripheral data you are toting in those web based accounts you login day in and day out. Protecting your accounts with unique and complex passwords isn’t just about you.  It’s about everyone you engage with using those services.  It’s about personal protection, for you, your family and your friends. So I get it, you don’t have anything to hide that you’re worried about a hacker exposing. But I do.</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="/2013/12/06/why-google-is-making-gmail-insecure/">How Google is making Gmail Insecure</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Dec 06, 2013</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p><a href="http://googleblog.blogspot.ca/2012/12/winter-cleaning.html">Last winter, about a year ago, Google did a round of house cleaning</a>.  When they did this they consequently opened the flood gates to making Gmail a less secure product.  <em>How you say</em>?  Let me explain...</p>
+<p>Google's 12/12 cleaning eliminated a product called Google Sync.  This was an extremely handy product for folks going mobile who want to stay connected to their email.  It essentially allowed you to setup your Gmail account using Microsoft's Exchange protocol.  What's significant about that is that it enabled instant push notifications for new email messages.  This meant that when Google got an email for you, if you were using the Exchange protocol you got it instantly. When Google dropped support for this the best you could hope for was getting your email in a 15 minute window, hardly instant.</p>
+<p>In a world of <strong>instant</strong> not having your email as soon as it's available is a huge deal.  But why did Google do this?  Presumably to get more people to adopt their <a href="https://itunes.apple.com/app/gmail/id422689480">Gmail iOS app</a>. But here's the thing... Gmail for iOS <em><strong>SUCKS</strong></em>!  Yeah, I said it, it's absolutely terrible!  Not all of it is Google's fault, but some of it should have been resolved when Google picked up <a href="http://sparrowmailapp.com/">Sparrow</a> in an acquisition - those dudes knew how to make an email account.  Gmail for iOS is awful first and foremost because iOS has no concept of a default email client.  If you're using Safari and you click on an email address, or maybe you click on it from your Contacts, you're going to open up the native Mail app. There are more problematic issues though that are technical in nature, like Gmail's inability to properly handle responsive email layouts. When email doesn't look right people don't want to use your product. This is where everything goes bad...</p>
+<p>Your email looks like crap and nothing on your mobile device uses the right client.  So what do you do?  You start experimenting with other clients. This is fundamentally how Google is destroying the security of Gmail.  Since the shut down of Google Sync for the masses you've seen a whole host of iOS email clients spring up.  I'm looking at you <a href="http://www.mailboxapp.com/">Mailbox</a>, <a href="http://evomail.io/">Evomail</a>, <a href="http://www.getboxer.com/">Boxer</a> and friends. Personally I don't have a beef with these products in and of themselves, but the problem is they all offer you push notifications <strong>at a cost</strong>.  Not a financial cost, a risky security cost. In order for these applications to tell you the instant you get your email you have to give them <strong>full and absolute access to your inbox</strong>.  Then you have to trust that <a href="https://lastpass.com/adobe/">no one at that company is stupid enough to become the next Adobe.</a> I actually like some of the products I just mentioned, but I don't use them.  The reason is simple, I'm not comfortable letting someone else comb my email every single day. Quite frankly, you shouldn't be either!</p>
+<p>What's the answer?  For me it's two fold...  Important email accounts use the Gmail iOS app.  Non-important email accounts stay in the native Mail app.  The important ones are there too, so that the rest of my iOS experience doesn't stink, but I have notifications and badges turned off for those accounts. It's not a pretty solution in my opinion, but it's the only solution that keeps your email safe.  Your email needs to be safe too.  There is no easier way for a hacker to gain access to everything else in your life than getting access to your email.  Most services allow you to reset everything under the sun using just your email address.  Keep your email safe!</p>
+<p>Both Google and Apple can help us out too, though I don't think either of them are going to do so.  Google can fix their technical problems.  Most of them should just not happen, it's inexcusable.  They can also work on making Gmail act more like an iOS app and less like a red-headed-Android app.  Meanwhile Apple can give us the ability to select a default email app, and they can also build out APIs to allow apps like Mailbox to poll an IMAP service like Gmail in the background of the device.  Yes, it's going to hurt your battery life but that's a price I'm willing to pay for security. I just wouldn't expect Apple to do that anytime soon...</p>
+<p>There's one other option I haven't mentioned...  Ditch Gmail altogether.  If Google is content to encourage users to risk their email security then maybe it's time to look elsewhere?  Any Exchange based service will work, and quite honestly the dudes over at Microsoft have built a solid product with <a href="http://outlook.com">Outlook.com</a>.  If that doesn't float your boat, <a href="http://mail.yahoo.com">Yahoo Mail</a> also has a solid email solution.  And guess what... you can get push notifications for both!</p>
+<p><em>Someone may be quick to point out that Apple's own iCloud solution does push too.  This is true, but anyone who has used iCloud knows, the spam filtering and phishing protection makes it nearly the worst solution to email available on the internet today.</em></p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="/2013/10/28/the-datamapper-ruse/">The DataMapper Ruse</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Oct 29, 2013</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>There were some great articles today about ORMs, specifically &quot;<a href="http://programmingarehard.com/2013/10/21/is-orm-abstraction-a-pipe-dream.html">Is ORM abstraction a pipe dream?</a>&quot; by David Adam and then &quot;<a href="http://paul-m-jones.com/archives/4757">Publish Your Failure; or, The Way Of All Frameworks</a>&quot; by Paul Jones (the man who led me to good BBQ in Memphis).</p>
+<p>I've been thinking about ORMs a lot lately and I've been wanting to write something about what I consider to be the DataMapper farce. I should be clear up front, I'm big Doctrine 2 fan.  <strong>BIG.</strong> It's my ORM of choice every single time, or maybe it was... On principal I love Doctrine 2. My days as a Java developer made me grow fond of Hibernate and with time I've come to really appreciate object hydration via the DataMapper pattern alongside the Repository pattern.  What I've appreciated most is the fact that I can write a model with no implicit dependencies, meaning my class &quot;Foo&quot; does not extend <em>ActiveFoo</em> or <em>QueryFoo</em> or <em>BaseFoo</em> or <em>FooTable</em> or <em>GatewayFoo</em> or <em>FooPeer</em> or <em>MagicHotSauceFoo</em>, it simply stands on it's own.  In the case of Doctrine 2 my model usually gets some love from annotations or maybe Yaml if I'm looking to spice up my day.</p>
+<p>Here's the thing I've been contemplating though and why I think this notion of portability is fundamentally a ruse (<em>for now</em>). In the PHP universe what other library provides a DataMapper implementation that would allow you to freely move from Doctrine 2? If I choose to write stand alone models I am either stuck doing some sort of hydration myself (<em>all kinds of time consuming icky</em>) or I am using Doctrine 2.  So this idea that ActiveRecord locks you in and Doctrine 2 doesn't, is, well simply not true...  Short of a viable alternative Doctrine 2 has a monopoly on the DataMapper pattern, making it as 'locked in' as using Propel or any other ActiveRecord-styled ORM.</p>
+<p>Now don't get me wrong...  This doesn't change the fact that I will likely continue to gravitate toward's Doctrine 2.  I am going to hang tight and hope for some healthy competition that will allow me to write my models portable enough to swap in Doctrine 2 for odd days of the week and LibraryX for even days.</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="/2013/10/24/a-slice-of-bundle-please/">A Slice of Bundle Please</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Oct 24, 2013</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>PHP has more frameworks then I have fingers and toes, and that diversity gives developers and architects alike a lot of choices when it comes to solving a problem. It can also be a total headache sifting through the options and making sense of what seems like chaos. As of late I've found myself using Symfony 2 to solve my problems and I am increasingly a fan of it's underlying architecture and the freedom it gives developers to work in slices or components of an application.</p>
+<p>A fair amount of debate has hit the internet about the dependency model of certain Symfony 2 components. Some argue that component A with dependencies B and C is too much, or that because component A also requires dependencies D, E and F to run it's unit tests it's not a truly stand alone component and instead represent a &quot;coupled&quot; library or framework.  I actually think there is a lot of merit in these assessments, but I don't believe it discounts Symfony 2 from being my MVC framework of choice.  Nor do I think this somehow invalidates the fact that Symfony 2 stands distinctively different from the alternatives in the PHP community. Symfony 2 is a huge step forward from the land of tightly coupled frameworks (I'm looking at you Cake!).  More importantly than the dependency model though, I think Symfony 2 presents an architecture of &quot;Bundles&quot; that simply doesn't get enough love in the current framework debates.</p>
+<p>A bundle in Symfony 2 is nothing more then a stand alone unit of code.  It may have dependencies, but it's stand alone in the sense that it represents a functional chunk of an application.  A well designed bundle could theoretically be deployed as distinct unit from an application.  Think about an application where you have an internal messaging system.  Wouldn't it be nice to be able to peel that message system out of the main app and to develop it independently?  When I say independently, I mean completely functioning on a web server without the rest of the application.  This is bundle development at its finest.</p>
+<p>Don't get me wrong, lots of bundles are not developed this way.  I've seen applications where bundle divisions are completely arbitrary and others that had a nasty web of cross dependencies such that they should have just been in the same bundle.  There is a happy place however, where bundle development represents a unique sliver of a larger application, and that place is why I'm so drawn to Symfony 2.</p>
+<p>I've been working on a reporting bundle for a little while now. It's a simple concept, take an arbitrary query and translate it into a table. When I am developing it locally I actually have it bootstrapped into a vanilla Symfony Standard edition created by composer.  When I am done with changes I deploy them into two different apps I've written that both use this bundle.  The apps themselves have very little knowledge of the bundle, just enough to put some links into their respective menus, import a routing configuration and that's about it. What's most important though is that the reporting bundle itself has no knowledge of the two apps, such that I can develop it independently and deploy it to both without disrupting anything.  The immediate benefits of this are rapid development and deployment, allowing for changes to trickle out to actual software faster.</p>
+<p>This sort of development, application by slice or bundle, in a big team can optimize workflow by an order of magnitude.  You can have a team iterating independently at a rapid pace without disrupting the other teams.  In the end you have a forward moving application of independent and highly functional units. What's not to love about that?</p>
+<p>Symfony 2's implementation is unique in my opinion because of things like extensions, compiler passes, bundle inheritance and the power of template inheritance. These aspects of Symfony 2 really empower unique slivers of code.  When done right it's completely possible to develop a bundle that doesn't even need Symfony 2.  Want to bootstrap a new framework and use your bundle?  You can do that - it just requires some deliberate planning at the onset (aka inject, inject, inject!).  Now some will read this an appeal to the awesomeness of Symfony’s dependency injection component and argue that’s really where the power of these slivers come into play.  I disagree, I think it’s a piece of the pie - but fundamentally there is an underlying architecture and set of principals that lends itself to lose coupling of pieces of an application.  What I wish though, is that this bundle mentality would materialize in some other frameworks!</p>
+<p><em>** After writing this I was challenged with the notion of “plugins” or “modules” as they appear in some other frameworks.  In my opinion most of the “things” that use this terminology lack the looseness of a Symfony bundle. A well written Symfony 2 bundle can in my opinion be bootstrapped without using Symfony.  It requires writing Controllers that stand alone and are injected and it requires having a full grasp of your dependencies (no $this-&gt;createForm() please), but it can be done and the power of that independently deployable bundle is something that plugins and modules simply have not proven they can do just yet.</em></p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+
+<nav class="text-center">
+  <ul class="pagination">
+    
+      <li>
+        <a href="/page/7/">&laquo; Prev</a>
+      </li>
+    
+
+    
+      
+        <li><a href="/">1</a></li>
+      
+    
+      
+        <li><a href="/page/2/">2</a></li>
+      
+    
+      
+        <li><a href="/page/3/">3</a></li>
+      
+    
+      
+        <li><a href="/page/4/">4</a></li>
+      
+    
+      
+        <li><a href="/page/5/">5</a></li>
+      
+    
+      
+        <li><a href="/page/6/">6</a></li>
+      
+    
+      
+        <li><a href="/page/7/">7</a></li>
+      
+    
+      
+        <li class="active"><a>8</a></li>
+      
+    
+      
+        <li><a href="/page/9/">9</a></li>
+      
+    
+      
+        <li><a href="/page/10/">10</a></li>
+      
+    
+      
+        <li><a href="/page/11/">11</a></li>
+      
+    
+      
+        <li><a href="/page/12/">12</a></li>
+      
+    
+      
+        <li><a href="/page/13/">13</a></li>
+      
+    
+      
+        <li><a href="/page/14/">14</a></li>
+      
+    
+
+    
+      <li>
+        <a href="">Next &raquo;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+        </div>
+      </div>
+   	</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li>
+            <a href="http://twitter.com/stanlemon">
+              <i class="icon-twitter icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://linkedin.com/in/stanlemon">
+              <i class="icon-linkedin icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/stanlemon">
+              <i class="icon-github icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="undefined/feed.xml">
+              <i class="icon-rss icon-2x"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">
+            &copy;  Stan Lemon
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  const nav = document.querySelector('#nav');
+  document.querySelector('.navbar-toggle').addEventListener("click", function() {
+    nav.classList.toggle('updown');
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33072694-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

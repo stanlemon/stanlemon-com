@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8">
+  <title>lemonbytes by Stan Lemon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://stanlemon.com/2013/12/06/why-google-is-making-gmail-insecure/">
+  <link rel="alternate" type="application/rss+xml" title="lemonbytes by Stan Lemon" href="https://stanlemon.com/feed.xml" />
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">  
+
+  <link href="//fonts.googleapis.com/css?family=Oswald|Source+Code+Pro" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <div id="nav" class="updown" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://twistoflemonpod.com/" target="_window">Podcast</a></li>
+        <li><a href="https://eepurl.com/gvEkEL" target="_window">Subscribe</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          lemonbytes<span class="byline"> by Stan Lemon</span>
+          <p class="lead">husband, dad, steelers fan and software engineer</p>
+        </h1>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="panel">
+        <div class="panel-body">
+          
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="">How Google is making Gmail Insecure</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Dec 06, 2013</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p><a href="http://googleblog.blogspot.ca/2012/12/winter-cleaning.html">Last winter, about a year ago, Google did a round of house cleaning</a>.  When they did this they consequently opened the flood gates to making Gmail a less secure product.  <em>How you say</em>?  Let me explain...</p>
+<p>Google's 12/12 cleaning eliminated a product called Google Sync.  This was an extremely handy product for folks going mobile who want to stay connected to their email.  It essentially allowed you to setup your Gmail account using Microsoft's Exchange protocol.  What's significant about that is that it enabled instant push notifications for new email messages.  This meant that when Google got an email for you, if you were using the Exchange protocol you got it instantly. When Google dropped support for this the best you could hope for was getting your email in a 15 minute window, hardly instant.</p>
+<p>In a world of <strong>instant</strong> not having your email as soon as it's available is a huge deal.  But why did Google do this?  Presumably to get more people to adopt their <a href="https://itunes.apple.com/app/gmail/id422689480">Gmail iOS app</a>. But here's the thing... Gmail for iOS <em><strong>SUCKS</strong></em>!  Yeah, I said it, it's absolutely terrible!  Not all of it is Google's fault, but some of it should have been resolved when Google picked up <a href="http://sparrowmailapp.com/">Sparrow</a> in an acquisition - those dudes knew how to make an email account.  Gmail for iOS is awful first and foremost because iOS has no concept of a default email client.  If you're using Safari and you click on an email address, or maybe you click on it from your Contacts, you're going to open up the native Mail app. There are more problematic issues though that are technical in nature, like Gmail's inability to properly handle responsive email layouts. When email doesn't look right people don't want to use your product. This is where everything goes bad...</p>
+<p>Your email looks like crap and nothing on your mobile device uses the right client.  So what do you do?  You start experimenting with other clients. This is fundamentally how Google is destroying the security of Gmail.  Since the shut down of Google Sync for the masses you've seen a whole host of iOS email clients spring up.  I'm looking at you <a href="http://www.mailboxapp.com/">Mailbox</a>, <a href="http://evomail.io/">Evomail</a>, <a href="http://www.getboxer.com/">Boxer</a> and friends. Personally I don't have a beef with these products in and of themselves, but the problem is they all offer you push notifications <strong>at a cost</strong>.  Not a financial cost, a risky security cost. In order for these applications to tell you the instant you get your email you have to give them <strong>full and absolute access to your inbox</strong>.  Then you have to trust that <a href="https://lastpass.com/adobe/">no one at that company is stupid enough to become the next Adobe.</a> I actually like some of the products I just mentioned, but I don't use them.  The reason is simple, I'm not comfortable letting someone else comb my email every single day. Quite frankly, you shouldn't be either!</p>
+<p>What's the answer?  For me it's two fold...  Important email accounts use the Gmail iOS app.  Non-important email accounts stay in the native Mail app.  The important ones are there too, so that the rest of my iOS experience doesn't stink, but I have notifications and badges turned off for those accounts. It's not a pretty solution in my opinion, but it's the only solution that keeps your email safe.  Your email needs to be safe too.  There is no easier way for a hacker to gain access to everything else in your life than getting access to your email.  Most services allow you to reset everything under the sun using just your email address.  Keep your email safe!</p>
+<p>Both Google and Apple can help us out too, though I don't think either of them are going to do so.  Google can fix their technical problems.  Most of them should just not happen, it's inexcusable.  They can also work on making Gmail act more like an iOS app and less like a red-headed-Android app.  Meanwhile Apple can give us the ability to select a default email app, and they can also build out APIs to allow apps like Mailbox to poll an IMAP service like Gmail in the background of the device.  Yes, it's going to hurt your battery life but that's a price I'm willing to pay for security. I just wouldn't expect Apple to do that anytime soon...</p>
+<p>There's one other option I haven't mentioned...  Ditch Gmail altogether.  If Google is content to encourage users to risk their email security then maybe it's time to look elsewhere?  Any Exchange based service will work, and quite honestly the dudes over at Microsoft have built a solid product with <a href="http://outlook.com">Outlook.com</a>.  If that doesn't float your boat, <a href="http://mail.yahoo.com">Yahoo Mail</a> also has a solid email solution.  And guess what... you can get push notifications for both!</p>
+<p><em>Someone may be quick to point out that Apple's own iCloud solution does push too.  This is true, but anyone who has used iCloud knows, the spam filtering and phishing protection makes it nearly the worst solution to email available on the internet today.</em></p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+        </div>
+      </div>
+   	</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li>
+            <a href="http://twitter.com/stanlemon">
+              <i class="icon-twitter icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://linkedin.com/in/stanlemon">
+              <i class="icon-linkedin icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/stanlemon">
+              <i class="icon-github icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="undefined/feed.xml">
+              <i class="icon-rss icon-2x"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">
+            &copy;  Stan Lemon
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  const nav = document.querySelector('#nav');
+  document.querySelector('.navbar-toggle').addEventListener("click", function() {
+    nav.classList.toggle('updown');
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33072694-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

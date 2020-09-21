@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8">
+  <title>lemonbytes by Stan Lemon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://stanlemon.com/2019/02/28/react-pouchdb-components/">
+  <link rel="alternate" type="application/rss+xml" title="lemonbytes by Stan Lemon" href="https://stanlemon.com/feed.xml" />
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">  
+
+  <link href="//fonts.googleapis.com/css?family=Oswald|Source+Code+Pro" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <div id="nav" class="updown" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://twistoflemonpod.com/" target="_window">Podcast</a></li>
+        <li><a href="https://eepurl.com/gvEkEL" target="_window">Subscribe</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          lemonbytes<span class="byline"> by Stan Lemon</span>
+          <p class="lead">husband, dad, steelers fan and software engineer</p>
+        </h1>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="panel">
+        <div class="panel-body">
+          
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="">React PouchDB Components</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Mar 01, 2019</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>Last night I released a new library to <a href="https://github.com/stanlemon/react-pouchdb">GitHub</a> and <a href="https://www.npmjs.com/package/@stanlemon/react-pouchdb">npm</a> called React PouchDB components. I'm excited to share this library, which started as an experiment to illustrate to my friend <a href="http://jonkohlmeier.net">Jon</a> how easy it could be to leverage <a href="http://pouchdb.com">PouchDB</a> in <a href="https://reactjs.org">React</a>. After enough tooling around I suspected that the pieces could be extracted and shared more broadly.</p>
+<p>There are a number of different ways to deal with state in React, everything from the simple <a href="https://reactjs.org/docs/state-and-lifecycle.html"><code>setState()</code></a> to <a href="http://redux.js.org">redux</a>. Most sites need remote data, and so as a developer your options become a little more complex, leveraging promises inside of <code>componentDidMount()</code> or tools like <a href="https://www.github.com/reduxjs/redux-thunk">redux-thunk</a>. These are all great, but what I wanted was a simple way to fetch data into PouchDB and for it to be declarative.</p>
+<p>Here's what I imagined...</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> Database<span class="token punctuation">,</span> Document <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@stanlemon/react-pouchdb"</span><span class="token punctuation">;</span><br><br><span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">return</span> <span class="token punctuation">(</span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Database</span></span><span class="token punctuation">></span></span><span class="token plain-text"><br>      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Document</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-document<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text"><br>        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyComponent</span></span> <span class="token punctuation">/></span></span><span class="token plain-text"><br>      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Document</span></span><span class="token punctuation">></span></span><span class="token plain-text"><br>    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Database</span></span><span class="token punctuation">></span></span><br>  <span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name<span class="token punctuation">,</span> description <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">return</span> <span class="token punctuation">(</span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text"><br>      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text"><br>      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>description<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token plain-text"><br>    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
+<p>There are two components here, the first <code>&lt;MyComponent /&gt;</code> is a simple view, it renders some properties that are passed to it.  The other is <code>&lt;App /&gt;</code> which declaratively establishes a PouchDB database connection using the <code>&lt;Database /&gt;</code> component.  <em>This component can take an optional name and remote URL for syncing.</em> The <code>&lt;App /&gt;</code> component also uses the <code>&lt;Document /&gt;</code> component which is responsible for fetching data out of a PouchDB document and setting it as properties on <code>&lt;MyComponent /&gt;</code>.</p>
+<p>One of the other advantages of the <code>&lt;Document /&gt;</code> component is that it provides a property to it's children called <code>putDocument()</code> that allows you to update the state of your document, just as you might when using <code>setState()</code>. This method eagerly updates the component's properties, and then ensures that the document is updated in PouchDB.</p>
+<p>As an added bonus, if you're syncing your PouchDB database to a remote <a href="https://docs.couchdb.org">CouchDB</a> instance, the <code>&lt;Document /&gt;</code> component will update properties when change events occur. This means that you can sync down remote updates with little effort in near real time.</p>
+<p><strong>There is a working example in the GitHub repository under the <code>./example/</code> directory. It has it's own <code>README</code> and is really easy to spin up and start playing.</strong> <a href="https://stanlemon-react-pouchdb.glitch.me">You can check out the example app over on glitch.</a> This example app showcases several different ways to leverage a document including <code>&lt;Document /&gt;</code> and a higher order function <code>withDocument()</code>.</p>
+<p>Ready to give it a spin?</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span> --save @stanlemon/react-pouchdb pouchdb</code></pre>
+<p>From there the <a href="https://github.com/stanlemon/react-pouchdb/blob/master/README.md"><code>README</code></a> is your friend!</p>
+<p>This library is intended to quickly get a PouchDB database into your react application. It won't work for every situation and there are definitely more complicated use cases that it does not cover, but as a starting point it should get you off the ground quickly.  It's also worth noting that this library is not intended to work with other state container libraries.  Maybe it does, but that'll be purely by chance.  If you are using something like redux you should consider taking a look at <a href="https://github.com/vicentedealencar/redux-pouchdb">redux-pouchdb</a>.</p>
+<p>Please reach out with feedback!  I love questions and suggestions so send them my way.</p>
+<p><em>Stay tuned, I have some more PouchDB related goodies coming.</em></p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+        </div>
+      </div>
+   	</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li>
+            <a href="http://twitter.com/stanlemon">
+              <i class="icon-twitter icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://linkedin.com/in/stanlemon">
+              <i class="icon-linkedin icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/stanlemon">
+              <i class="icon-github icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="undefined/feed.xml">
+              <i class="icon-rss icon-2x"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">
+            &copy;  Stan Lemon
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  const nav = document.querySelector('#nav');
+  document.querySelector('.navbar-toggle').addEventListener("click", function() {
+    nav.classList.toggle('updown');
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33072694-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

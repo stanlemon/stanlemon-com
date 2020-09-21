@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8">
+  <title>lemonbytes by Stan Lemon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://stanlemon.com/2014/03/15/against-setter-injection/">
+  <link rel="alternate" type="application/rss+xml" title="lemonbytes by Stan Lemon" href="https://stanlemon.com/feed.xml" />
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">  
+
+  <link href="//fonts.googleapis.com/css?family=Oswald|Source+Code+Pro" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <div id="nav" class="updown" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://twistoflemonpod.com/" target="_window">Podcast</a></li>
+        <li><a href="https://eepurl.com/gvEkEL" target="_window">Subscribe</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          lemonbytes<span class="byline"> by Stan Lemon</span>
+          <p class="lead">husband, dad, steelers fan and software engineer</p>
+        </h1>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="panel">
+        <div class="panel-body">
+          
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="">Against Setter Injection</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Mar 15, 2014</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>I recently read Richard Miller's post  <a href="http://richardmiller.co.uk/2014/03/12/avoiding-setter-injection/">Avoiding Setter Injection</a> and I in large part agree with his sentiments. My conversion to constructor injection over setter injection is a fairly recent one and when I was initially deliberating the differences I found a lot of explanations online with little concrete code to show why this practice is less productive to good object oriented design. I thought I would try to illustrate with some concrete code examples I agree with Miller that ultimately constructor injection is a more worthy approach and why you should avoid using setter injection whenever possible.</p>
+<p>First, let's consider two interfaces <em>FooService</em> and <em>FooNotifier. FooService</em> will use a <em>FooNotifier</em> which contains a method <em>notify().</em> We have two implementations of <em>FooNotifier</em> the <em>BarNotifier</em> and the <em>BazNotifier.</em>  Fundamentally they do two completely different things, though they agree to the same contract.  Here's what these things look like:</p>
+<p>[gist]https://gist.github.com/stanlemon/d0748c96775995275074[/gist]</p>
+<p>Now let's take a look at our constructor injection implementation <em>FooServiceConstruct</em>:</p>
+<p>[gist]https://gist.github.com/stanlemon/a1968eedabb808fa5985[/gist]</p>
+<p>And also our setter injection implementation <em>FooServiceSetter</em>:</p>
+<p>[gist]https://gist.github.com/stanlemon/4ca097db323de8c7faba[/gist]</p>
+<p>The argument goes that with constructor injection you create an object with all of it's dependencies. This means that you minimize side effects caused by the dependency not being injected, or worse changing on you after your object has been created. It makes your object fundamentally more predictable. Think of it this way, this is the only way that we can use our <em>FooServiceConstruct</em>:</p>
+<p>[gist]https://gist.github.com/stanlemon/f2cf4b13562fa1fa3f74[/gist]</p>
+<p>But with _FooServiceSetter w_e can actually do a couple of things with that implementation...</p>
+<p>[gist]https://gist.github.com/stanlemon/bcd6e243a4baa5d7b0f5[/gist]</p>
+<p>You'll see that we can create a <em>FooService</em> that either does not work or that can have it's internal behavior completely changed out from under us.  Neither of these options is good. The alternative is that with constructor injection we have an object that stands on it's own, the functionality of which cannot be changed in runtime after it has been instantiated. If you want to avoid buggy software, make your objects predictable.</p>
+<p>This is a simple example, but it illustrates the nature of an object that uses setter injection. It creates the potential for volatility in your object that you don't want to occur.  Now I'm not saying you should never inject via setter. There may be times that you actually want the behavior I've illustrated, however I think you will find that most of the time you simply don't want that. Subsequently as a general rule I inject by constructor unless compelled otherwise during the design of my software. I make it the exception, not the rule when writing objects.</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+        </div>
+      </div>
+   	</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li>
+            <a href="http://twitter.com/stanlemon">
+              <i class="icon-twitter icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://linkedin.com/in/stanlemon">
+              <i class="icon-linkedin icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/stanlemon">
+              <i class="icon-github icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="undefined/feed.xml">
+              <i class="icon-rss icon-2x"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">
+            &copy;  Stan Lemon
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  const nav = document.querySelector('#nav');
+  document.querySelector('.navbar-toggle').addEventListener("click", function() {
+    nav.classList.toggle('updown');
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33072694-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

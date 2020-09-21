@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8">
+  <title>lemonbytes by Stan Lemon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://stanlemon.com/2013/12/09/2-factor-this/">
+  <link rel="alternate" type="application/rss+xml" title="lemonbytes by Stan Lemon" href="https://stanlemon.com/feed.xml" />
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">  
+
+  <link href="//fonts.googleapis.com/css?family=Oswald|Source+Code+Pro" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <div id="nav" class="updown" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://twistoflemonpod.com/" target="_window">Podcast</a></li>
+        <li><a href="https://eepurl.com/gvEkEL" target="_window">Subscribe</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          lemonbytes<span class="byline"> by Stan Lemon</span>
+          <p class="lead">husband, dad, steelers fan and software engineer</p>
+        </h1>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="panel">
+        <div class="panel-body">
+          
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="">2-Factor This!</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Dec 10, 2013</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>A lot of services across the web are amping up security in lieu of <a href="http://abcnews.go.com/Technology/hacker-group-stole-million-stolen-facebook-google-passwords/story?id=21109910">recent breaches</a>. One technique to do this is called <a href="https://help.github.com/articles/about-two-factor-authentication">two factor authentication</a>. It’s a name that perfectly describes the technique, but explains absolutely nothing.</p>
+<p>So what is two factor auth and why do you care? Simply, two factor auth is your password plus something else. In most cases that “something else” is going to be a text message, an email or a secure token system like <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605">Google Authenticator</a> or <a href="https://www.authy.com">Authy</a>. Some banking websites have been doing this forever via email but the growing trend is to use text messages as they can be a considerably safer approach to this sort of authentication.</p>
+<p>Here’s the thing to keep in mind… You are most likely already doing two factor auth in your life - you just don’t think of it like that. If you have a safety deposit box for example, it takes two keys to unlock it. Without both sets your birth certificate isn’t going to see the light of day. If you’ve bought a car recently you’re also using two factor auth as <a href="http://en.wikipedia.org/wiki/Transponder_car_key">every car key these days comes with a microchip implemented in it</a>. You can’t start your car with a copy of your key, you need to use the key plus the microchip if you want to drive anywhere. And if you don’t have that microchip your car not only won’t run, it very well may lock up on you too! These are two factor strategies, where they prevent criminal-like-folk from copying your keys and running away with your identity and precious automobile. <em>Why not use that same strategy with your personal information stored securely on the world wide web?</em></p>
+<p>How does two factor work with your favorite web service? There are two typical routes, the most common of which involves your cell phone and a text messaging plan. If you don’t have unlimited text messaging either pony up or take a trip to the Verizon store for an upgrade. When you login, normally for the first time, you’ll get a text message from the service in question. Websites like Facebook will ask you to punch in a unique code on this text message after you enter your password, but before you actually get to login to the service. The idea is that your cell phone is most likely on you and there’s a uniqueness to the device in your pocket that a hacker cannot replicate. Stealing your password then is not enough, you need to steal a person’s cell phone too - thus making it infinitely more difficult for a hacker to access your information.</p>
+<p>Not every service has two factor authentication, but a lot do. You should evaluate the services you use every day and consider enabling two factor authentication where it’s available. I’m a big proponent of enabling two factor auth for your <a href="http://www.google.com/landing/2step/">Google</a>, <a href="https://www.dropbox.com/help/363/en">Dropbox</a>, <a href="http://blog.evernote.com/blog/2013/10/04/two-step-verification-available-to-all-users/">Evernote</a> and <a href="https://www.facebook.com/note.php?note_id=10150172618258920">Facebook</a> accounts. As these items likely contain more personal data about you and your friends than anything else you’re using it’s important to harden your security around them.</p>
+<p>Don’t get me wrong… Two factor auth doesn’t just slow down the losers trying to compromise your data, it slows you down too. Principally though this should only happen when you setup Facebook on your phone, or configure your email client to pull down your Gmail. Your setup is slower, but your data is safer. In my opinion this is a fair trade considering what is at stake. One other thing to keep in mind… <strong>These services don’t do two factor auth for their sake.</strong> It actually costs them money to run, with almost no return on the investment! Two factor auth is a service for you, to protect your data and keep you, your family and friends safe.</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+        </div>
+      </div>
+   	</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li>
+            <a href="http://twitter.com/stanlemon">
+              <i class="icon-twitter icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://linkedin.com/in/stanlemon">
+              <i class="icon-linkedin icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/stanlemon">
+              <i class="icon-github icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="undefined/feed.xml">
+              <i class="icon-rss icon-2x"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">
+            &copy;  Stan Lemon
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  const nav = document.querySelector('#nav');
+  document.querySelector('.navbar-toggle').addEventListener("click", function() {
+    nav.classList.toggle('updown');
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33072694-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

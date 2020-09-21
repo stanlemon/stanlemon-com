@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8">
+  <title>lemonbytes by Stan Lemon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://stanlemon.com/2014/06/12/review-extending-symnfony/">
+  <link rel="alternate" type="application/rss+xml" title="lemonbytes by Stan Lemon" href="https://stanlemon.com/feed.xml" />
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">  
+
+  <link href="//fonts.googleapis.com/css?family=Oswald|Source+Code+Pro" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <div id="nav" class="updown" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://twistoflemonpod.com/" target="_window">Podcast</a></li>
+        <li><a href="https://eepurl.com/gvEkEL" target="_window">Subscribe</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          lemonbytes<span class="byline"> by Stan Lemon</span>
+          <p class="lead">husband, dad, steelers fan and software engineer</p>
+        </h1>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="panel">
+        <div class="panel-body">
+          
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="">Review: Extending Symnfony</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Jun 12, 2014</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p><a href="http://www.packtpub.com/extending-symfony-2-web-application-framework/book">Extending Symnfony</a> by Sébastien Armand is a tutorial-style introduction to a variety of the ways that you can extend a Symfony 2 full stack installation. I’m a big fan of Symfony 2 and I’ve done a fair amount of app building with it, so I was interested in Armand’s book and seeing what new things I could discover about hooking into sf2.</p>
+<p>The book is filled with code samples, far more than you’ll find in most other technical books. Most of these code samples are also complete, which anyone who has traversed the official Symfony 2 cookbooks will greatly appreciate. Unfortunately, these code samples sometimes cross pages in inconvenient ways, and none of them include syntax highlighting which can make it hard to read at times.</p>
+<p>Armand tackles six (sort of eight) areas of Symfony 2 development where developers can tap in and extend existing functionality of Symfony 2. First and foremost he kicks off his tutorials with covering service definitions and listeners. These topics seem like they could have been separate chapters to me, but nonetheless he does a good job of giving real world examples of how to tie these things in. He especially does well with event listeners - the secret weapon of the Symfony 2 stack (in my opinion anyhow).</p>
+<p>Armand’s approach to extending symfony is project-based, meaning that through the book you’re working on building an app that handles some details for meet ups between users. You can think of it like the old Symfony 1 Askeet tutorial. This is a huge advantage of Armand’s book over other Symfony 2 texts you’ll find in the wild. Actual applications create context and drive home the concepts. As an added bonus, in this book you are NOT building yet another task manager!</p>
+<p>The Security chapter covers some of the more difficult areas of Symfony 2. Anyone who has dealt with Security in sf2 knows that, while extremely powerful, it can also be extremely challenging. Armand’s examples are helpful, especially as he tackles an OAuth implementation. Armand uses the Friends of Symfony UserBundle to get going, but unfortunately didn’t cover with too much depth getting started with this super handy bundle. The examples in the book are priceless, but I look forward to future revisions that cover the new SimpleAuth implementation in Symfony 2. The only other thing I wished Armand would have covered was securing an api with tokens and a custom user provider for doing this. He shows how a cookie can be used with an event listener, but truthfully there are better ways of tackling this problem in Symfony 2 that are more consistent with its security model.</p>
+<p>One of the most valuable chapters in this book is the Doctrine chapter. Doctrine 2’s official documentation lacks a lot of context. By being a project-based tutorial, Armand actually shows you how to write a custom data type, custom DQL function, and a custom filter, rather than stumble through the Doctrine 2 docs and hope you got close. This chapter in and of itself is a valuable resource for those times when you need to do these things.</p>
+<p>The final chapter discusses bundles briefly. This is one area of the book I felt could have been fleshed out a bit more. Armand covers the basics, but part of me felt like this chapter almost belonged at the beginning of the book instead of the tail end. The other thing that was missing from this chapter was bundle inheritance which, while a tricky subject, is a huge part of extending a Symfony 2 application.</p>
+<p>All in all I think this is a solid book on tapping into some of the more powerful features of Symfony 2 and it’s counterpart Doctrine 2. The book is at times a little oddly organized, but the code samples and tip are worthy any web developers time. If you’re looking to dive into some of the things in the book’s table of contents get yourself a copy and profit from Armand’s tutorials and extensive code samples.</p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+        </div>
+      </div>
+   	</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li>
+            <a href="http://twitter.com/stanlemon">
+              <i class="icon-twitter icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://linkedin.com/in/stanlemon">
+              <i class="icon-linkedin icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/stanlemon">
+              <i class="icon-github icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="undefined/feed.xml">
+              <i class="icon-rss icon-2x"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">
+            &copy;  Stan Lemon
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  const nav = document.querySelector('#nav');
+  document.querySelector('.navbar-toggle').addEventListener("click", function() {
+    nav.classList.toggle('updown');
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33072694-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

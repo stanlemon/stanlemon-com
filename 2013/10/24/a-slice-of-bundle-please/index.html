@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8">
+  <title>lemonbytes by Stan Lemon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://stanlemon.com/2013/10/24/a-slice-of-bundle-please/">
+  <link rel="alternate" type="application/rss+xml" title="lemonbytes by Stan Lemon" href="https://stanlemon.com/feed.xml" />
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">  
+
+  <link href="//fonts.googleapis.com/css?family=Oswald|Source+Code+Pro" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <div id="nav" class="updown" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://twistoflemonpod.com/" target="_window">Podcast</a></li>
+        <li><a href="https://eepurl.com/gvEkEL" target="_window">Subscribe</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          lemonbytes<span class="byline"> by Stan Lemon</span>
+          <p class="lead">husband, dad, steelers fan and software engineer</p>
+        </h1>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="panel">
+        <div class="panel-body">
+          
+
+<div class="row">    
+  <div class="col-sm-offset-1 col-sm-7">
+    <h2>
+      <a href="">A Slice of Bundle Please</a>
+    </h2>
+    <h4>by Stan Lemon</h4>
+  </div>
+  <div class="col-sm-3 post-date">
+      <h3>Oct 24, 2013</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <article class="post-content">
+      <hr>
+      <p>PHP has more frameworks then I have fingers and toes, and that diversity gives developers and architects alike a lot of choices when it comes to solving a problem. It can also be a total headache sifting through the options and making sense of what seems like chaos. As of late I've found myself using Symfony 2 to solve my problems and I am increasingly a fan of it's underlying architecture and the freedom it gives developers to work in slices or components of an application.</p>
+<p>A fair amount of debate has hit the internet about the dependency model of certain Symfony 2 components. Some argue that component A with dependencies B and C is too much, or that because component A also requires dependencies D, E and F to run it's unit tests it's not a truly stand alone component and instead represent a &quot;coupled&quot; library or framework.  I actually think there is a lot of merit in these assessments, but I don't believe it discounts Symfony 2 from being my MVC framework of choice.  Nor do I think this somehow invalidates the fact that Symfony 2 stands distinctively different from the alternatives in the PHP community. Symfony 2 is a huge step forward from the land of tightly coupled frameworks (I'm looking at you Cake!).  More importantly than the dependency model though, I think Symfony 2 presents an architecture of &quot;Bundles&quot; that simply doesn't get enough love in the current framework debates.</p>
+<p>A bundle in Symfony 2 is nothing more then a stand alone unit of code.  It may have dependencies, but it's stand alone in the sense that it represents a functional chunk of an application.  A well designed bundle could theoretically be deployed as distinct unit from an application.  Think about an application where you have an internal messaging system.  Wouldn't it be nice to be able to peel that message system out of the main app and to develop it independently?  When I say independently, I mean completely functioning on a web server without the rest of the application.  This is bundle development at its finest.</p>
+<p>Don't get me wrong, lots of bundles are not developed this way.  I've seen applications where bundle divisions are completely arbitrary and others that had a nasty web of cross dependencies such that they should have just been in the same bundle.  There is a happy place however, where bundle development represents a unique sliver of a larger application, and that place is why I'm so drawn to Symfony 2.</p>
+<p>I've been working on a reporting bundle for a little while now. It's a simple concept, take an arbitrary query and translate it into a table. When I am developing it locally I actually have it bootstrapped into a vanilla Symfony Standard edition created by composer.  When I am done with changes I deploy them into two different apps I've written that both use this bundle.  The apps themselves have very little knowledge of the bundle, just enough to put some links into their respective menus, import a routing configuration and that's about it. What's most important though is that the reporting bundle itself has no knowledge of the two apps, such that I can develop it independently and deploy it to both without disrupting anything.  The immediate benefits of this are rapid development and deployment, allowing for changes to trickle out to actual software faster.</p>
+<p>This sort of development, application by slice or bundle, in a big team can optimize workflow by an order of magnitude.  You can have a team iterating independently at a rapid pace without disrupting the other teams.  In the end you have a forward moving application of independent and highly functional units. What's not to love about that?</p>
+<p>Symfony 2's implementation is unique in my opinion because of things like extensions, compiler passes, bundle inheritance and the power of template inheritance. These aspects of Symfony 2 really empower unique slivers of code.  When done right it's completely possible to develop a bundle that doesn't even need Symfony 2.  Want to bootstrap a new framework and use your bundle?  You can do that - it just requires some deliberate planning at the onset (aka inject, inject, inject!).  Now some will read this an appeal to the awesomeness of Symfony’s dependency injection component and argue that’s really where the power of these slivers come into play.  I disagree, I think it’s a piece of the pie - but fundamentally there is an underlying architecture and set of principals that lends itself to lose coupling of pieces of an application.  What I wish though, is that this bundle mentality would materialize in some other frameworks!</p>
+<p><em>** After writing this I was challenged with the notion of “plugins” or “modules” as they appear in some other frameworks.  In my opinion most of the “things” that use this terminology lack the looseness of a Symfony bundle. A well written Symfony 2 bundle can in my opinion be bootstrapped without using Symfony.  It requires writing Controllers that stand alone and are injected and it requires having a full grasp of your dependencies (no $this-&gt;createForm() please), but it can be done and the power of that independently deployable bundle is something that plugins and modules simply have not proven they can do just yet.</em></p>
+
+      
+      <hr>
+    </article>
+  </div>
+</div>
+
+        </div>
+      </div>
+   	</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li>
+            <a href="http://twitter.com/stanlemon">
+              <i class="icon-twitter icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://linkedin.com/in/stanlemon">
+              <i class="icon-linkedin icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/stanlemon">
+              <i class="icon-github icon-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="undefined/feed.xml">
+              <i class="icon-rss icon-2x"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">
+            &copy;  Stan Lemon
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  const nav = document.querySelector('#nav');
+  document.querySelector('.navbar-toggle').addEventListener("click", function() {
+    nav.classList.toggle('updown');
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33072694-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
